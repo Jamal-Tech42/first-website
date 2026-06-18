@@ -16,7 +16,7 @@ button {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-}
+    }
 body{
     margin:0;
     font-family:Arial, sans-srif;
@@ -49,9 +49,12 @@ button{
     padding: 10px 16px;
     cursor:pointer;
     border-radius:6px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    display: inline-block;
 }
 button:hover {
     background: rgb(20, 82, 255);
+    transform: scale(1.1);
 }
 .hero{
     text-align:center;
@@ -140,6 +143,9 @@ button:hover {
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
 }
+.card-inner:hover{
+    transform: scale(1.05);
+}
 
 .card.flipped .card-inner {
     transform: rotateY(180deg);
@@ -182,6 +188,20 @@ button:hover {
     transform: rotateY(180deg);
 }
 
+/* Value card hover: change to rgb(17,156,202) without layout shift */
+.card-front,
+.card-back {
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.card:hover .card-front,
+.card:hover .card-back,
+.card-front:hover,
+.card-back:hover {
+    background: rgb(17, 156, 202);
+    color: white;
+}
+
 .dark .card-front {
     background: #333;
     color: white;
@@ -192,4 +212,55 @@ button:hover {
 }
 .h2 {
     padding: 20px;
+}
+.testimonial-container {
+    position: relative;
+    height: 200px;
+    width: 600px;
+    max-width: 90%;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.testimonial {
+    position: absolute;
+    inset: 0;
+    padding: 40px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial.active {
+    opacity: 1;
+    
+}
+
+.testimonial p {
+    font-size: 1.9rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+.dark .testimonial-container {
+    background:#111;
+    color:white;
+}
+.dark .testimonial p {
+    color: white;
+}   
+.visitor-counter {
+    text-align: center;
+    padding: 20px;
+}
+
+#count {
+    font-size: 2rem;
+    font-weight: bold;
 }

@@ -23,3 +23,16 @@ document.querySelectorAll(".card").forEach(card => {
         card.classList.toggle("flipped");
     });
 });
+const testimonials = document.querySelectorAll('.testimonial');
+let currentIndex = 0;
+
+function showNextTestimonial() {
+    testimonials[currentIndex].classList.remove('active');
+
+    currentIndex = (currentIndex + 1) % testimonials.length;
+
+    testimonials[currentIndex].classList.add('active');
+}
+
+// Rotate every 4 seconds
+setInterval(showNextTestimonial, 4000);
