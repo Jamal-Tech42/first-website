@@ -36,3 +36,13 @@ function showNextTestimonial() {
 
 // Rotate every 4 seconds
 setInterval(showNextTestimonial, 4000);
+
+fetch('https://api.countapi.xyz/hit/mywebsite123/visits')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('count').textContent = data.value;
+    })
+    .catch(error => {
+        console.error(error);
+        document.getElementById('count').textContent = 'Unavailable';
+    });

@@ -43,7 +43,7 @@ body{
     text-decoration:underline;
 }
 button{
-    background: navy;
+    background: #222;
     color:white;
     border:none;
     padding: 10px 16px;
@@ -54,6 +54,10 @@ button{
 }
 button:hover {
     background: rgb(20, 82, 255);
+    transform: scale(1.1);}
+
+.dark button:hover {
+    background: #333;
     transform: scale(1.1);
 }
 .hero{
@@ -201,6 +205,12 @@ button:hover {
     background: rgb(17, 156, 202);
     color: white;
 }
+.dark .card:hover .card-front,
+.dark .card:hover .card-back,
+.dark .card-front:hover,
+.dark .card-back:hover {
+    background: #111
+}
 
 .dark .card-front {
     background: #333;
@@ -263,4 +273,18 @@ button:hover {
 #count {
     font-size: 2rem;
     font-weight: bold;
+}
+#typing-text {
+    color: black;
+}
+
+.cursor {
+    color: black;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
